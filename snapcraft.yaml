@@ -1,0 +1,23 @@
+name: xlsx
+version: git
+summary: Convert microsoft XLSX files into CSV files.
+description: Convert microsoft XLSX files into CSV files.
+confinement: strict
+
+apps:
+  xlsx2csv:
+    command: xlsx2csv
+  csv2xlsx:
+    command: csv2xlsx
+
+parts:
+  xlsx2csv:
+    plugin: go
+    go-packages:
+      - github.com/tealeg/xlsx
+      - github.com/tealeg/xlsx2csv
+  csv2xlsx:
+    plugin: go
+    go-packages:
+      - github.com/tealeg/xlsx
+      - github.com/tealeg/csv2xlsx
